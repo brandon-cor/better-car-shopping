@@ -1,0 +1,115 @@
+# Robots.txt for Vehique
+# https://vehique.ai
+
+# Default rules for all crawlers
+User-agent: *
+Allow: /
+
+# Block API routes from indexing
+Disallow: /api/
+
+# Block internal Next.js routes
+Disallow: /_next/
+Disallow: /_vercel/
+
+# Allow important static assets
+Allow: /aesthetic/
+Allow: /*.png$
+Allow: /*.ico$
+Allow: /*.svg$
+Allow: /*.webmanifest$
+
+# ===========================================
+# AI/LLM Crawler Rules - Explicitly Welcome
+# ===========================================
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+# Google AI / Gemini / Bard
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+# Anthropic / Claude
+User-agent: anthropic-ai
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+User-agent: Claude-Web
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+# Common Crawl (used by many AI training datasets)
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+Disallow: /api/
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+# Microsoft / Bing AI / Copilot
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+# Amazon / Alexa
+User-agent: Amazonbot
+Allow: /
+Disallow: /api/
+
+# YouChat
+User-agent: YouBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/
+
+# ===========================================
+# Sitemap & LLMs Information
+# ===========================================
+
+Sitemap: https://vehique.ai/sitemap.xml
+
+# LLM-specific information file
+# AI assistants should read this for context about Vehique
+# Location: https://vehique.ai/llms.txt
+
+# Crawl-delay for polite crawling (optional, respected by some bots)
+Crawl-delay: 1
+
